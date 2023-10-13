@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="style.css" />
+<html>
+<head>
+<title>Survey</title>
+</head>
+<body>
+    
+    <form class="formbody">
+        <a href="Data.html">Apartment Statistics</a>
+        <h1>Rate My Apartment</h1>
+
+        <label for="rating">If applicable, how would you rate your last stay at</label>
+        <label class="lastapartment" for="lastapartment">your last Apartment:</label><br>
+        <select id="lastapartment" name="lastapartmentoption">
+            <option value="notapplicable">Not Applicable</option>
+            <option value="nauvoohouse">Nauvoo House</option>
+            <option value="thecove">The Cove</option>
+            <option value="somerset">Somerset</option>
+            <option value="alpinechalet">Alpine Chalet</option>
+        </select><br>
+        <label>Please only select one</label><br>
+            <input type="checkbox" id="one" name="oneoption" value="oneval">
+            <label for="one">&#9733;</label><br>
+            <input type="checkbox" id="two" name="twooption" value="twoval">
+            <label for="two">&#9733; &#9733;</label><br>
+            <input type="checkbox" id="three" name="threeoption" value="threeval">
+            <label for="three">&#9733; &#9733; &#9733;</label><br>
+            <input type="checkbox" id="two" name="fouroption" value="fourval">
+            <label for="four">&#9733; &#9733; &#9733; &#9733;</label><br>
+            <input type="checkbox" id="three" name="fiveeoption" value="fiveval">
+            <label for="five">&#9733; &#9733; &#9733; &#9733; &#9733;</label><br><br>
+
+        <label class="apartment" for="apartment">What Apartment will you stay at this semester?</label><br>
+        <select id="apartment" name="apartmentoption">
+            <option value="notapplicableapartment">Not Applicable</option>
+            <option value="nauvoohouse">Nauvoo House</option>
+            <option value="thecove">The Cove</option>
+            <option value="somerset">Somerset</option>
+            <option value="alpinechalet">Alpine Chalet</option>
+        </select><br>
+        <br>
+        <label for="housing">Mens/Womens/Married/Non BYUI aproved?</label><br>
+        <select id="housing" name="housingoption">
+            <option value="notapplicablehousing">Not Applicable</option>
+            <option value="womens">Womens</option>
+            <option value="mens">Mens</option>
+            <option value="married">Married</option>
+            <option value="unaproved">Non BYUI aproved</option>
+        </select><br>
+        <br>
+        <label for="semester">Which Semester(s) are you paying for right now?</label><br>
+            <input type="checkbox" id="fall" name="falloption" value="Fall Semester">
+            <label for="fall">Fall</label><br>
+            <input type="checkbox" id="spring" name="springoption" value="Car">
+            <label for="spring"> Spring</label><br>
+            <input type="checkbox" id="summer" name="summeroption" value="Summer Semester">
+            <label for="summer"> Summer</label><br>
+            <input type="checkbox" id="Winter" name="winteroption" value="Winter Semester">
+            <label for="winter"> Winter</label><br>
+            <br>
+        <label for="year">This Upcoming School Year?</label><br>
+        <input type="year" id="year" name="yearinput" min="2023" max="5000"><br>
+        <br>
+        <label id="semcost" for="semestercost">Total cost for this Semester?</label><br>
+        $<input type="number" id="cost" name="costinput" min="0" max="5000"><br>
+
+        <input class="submitbutton" type="submit" value="Submit" onclick="alert('Thank you for your Submission!')">
+    </form>
+</body>
+</html>
