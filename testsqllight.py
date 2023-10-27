@@ -6,8 +6,8 @@ import sqlite3
 
 #%%
 # SQlite db 
-sqlite_file = 'sqlitedb.sqlite'
-con = sqlite3.connect(sqlite_file)
+sqlite_file_name = 'sqlitedb.sqlite'
+con = sqlite3.connect(sqlite_file_name)
 
 # make a variable to keep track of things
 cursor = con.cursor()
