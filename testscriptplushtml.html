@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML Form to CSV</title>
+</head>
+<body>
+    <form id="data-form">
+        <a href="Data.html">Apartment Statistics</a>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br>
+
+        <label class="lastapartment" for="lastapartment">your last Apartment:</label><br>
+        <select id="lastapartment" name="lastapartmentoption">
+            <option value="notapplicable">Not Applicable</option>
+            <option value="nauvoohouse">Nauvoo House</option>
+            <option value="thecove">The Cove</option>
+            <option value="somerset">Somerset</option>
+            <option value="alpinechalet">Alpine Chalet</option>
+        </select><br>
+
+        <label for="name">Favorite number:</label>
+        <input type="int" id="numb" name="number" required><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+
+        <button type="button" id="submit-button">Submit</button>
+    </form>
+
+    <script>
+        // Function to convert form data to CSV
+        function formToCsv() {
+            // Get form data
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const number = document.getElementById('numb').value;
+            const lastapartment = document.getElementById('lastapartment').value;
+
+            // Create a CSV string
+            const csvData = `${name},${email},${number}, ${lastapartment}\n`;
+
+            // Download the CSV file
+            const blob = new Blob([csvData], { type: 'text/csv' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'form_data.csv';
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        // Attach an event listener to the submit button
+        document.getElementById('submit-button').addEventListener('click', formToCsv);
+    </script>
+</body>
+</html>

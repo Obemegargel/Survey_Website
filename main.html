@@ -6,7 +6,8 @@
 </head>
 <body>
     
-    <form class="formbody">
+    <!-- <form name ="form1" class="formbody" action="proces.php" method="get"> -->
+    <form name ="form1" class="formbody">
         <a href="Data.html">Apartment Statistics</a>
         <h1>Rate My Apartment</h1>
 
@@ -56,7 +57,7 @@
             <label for="spring"> Spring</label><br>
             <input type="checkbox" id="summer" name="summeroption" value="Summer Semester">
             <label for="summer"> Summer</label><br>
-            <input type="checkbox" id="Winter" name="winteroption" value="Winter Semester">
+            <input type="checkbox" id="winter" name="winteroption" value="Winter Semester">
             <label for="winter"> Winter</label><br>
             <br>
         <label for="year">This Upcoming School Year?</label><br>
@@ -65,7 +66,62 @@
         <label id="semcost" for="semestercost">Total cost for this Semester?</label><br>
         $<input type="number" id="cost" name="costinput" min="0" max="5000"><br>
 
-        <input class="submitbutton" type="submit" value="Submit" onclick="alert('Thank you for your Submission!')">
+        <input id="submit-button" class="submitbutton" type="submit" value="Submit" onclick="alert('Thank you for your Submission!')">
+        <button type="submit" id="submit-button" >Submit</button>
+
     </form>
+
+<!-- SCRIPT STUFF this is for a different html form so tinker with that one first-->
+
+    <script>
+        // Function to convert form data to CSV
+        function formToCsv() {
+            // Get form data
+            const lastapartment = document.getElementById('lastapartment').value;
+            const starone = document.getElementById('one').value;
+            const startwo = document.getElementById('two').value;
+            const starthree = document.getElementById('three').value;
+            const starfour = document.getElementById('four').value;
+            const starfive = document.getElementById('five').value;
+            const apartment = document.getElementById('apartment').value;
+            const housing = document.getElementById('housing').value;
+            const fall = document.getElementById('fall').value;
+            const spring = document.getElementById('spring').value;
+            const summer = document.getElementById('summer').value;
+            const winter = document.getElementById('winter').value;
+            const year = document.getElementById('year').value;
+            const cost = document.getElementById('cost').value;
+            // const submitted = document.getElementById('submit-button').Submit();
+            
+
+
+            // Create a CSV string
+            const csvData = `${lastapartment},${starone}\n
+            ${startwo}, ${starthree}, ${starfour}, ${starfive},\n
+            ${apartment}, ${housing}, \n
+            ${fall}, ${spring}, ${summer}, ${winter}, \n
+            ${year}, ${cost}\n`;
+
+            // Download the CSV file
+            const blob = new Blob([csvData], { type: 'text/csv' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'form_data.csv';
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        // Attach an event listener to the submit button
+        document.getElementById('submit-button').addEventListener('click', formToCsv);
+    </script>
+<!-- End of script stuff -->
+
+
+
+
+
+
+
 </body>
 </html>
