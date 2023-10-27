@@ -1,39 +1,62 @@
 # Overview
 
-I want to become a full stack developer so I am makeing a website that interests me.
 
-I am making a "Rate My Apartment" website. Users in the local area will fill out a form that expresses the cost of the apartment for the semester as well as their satisfaction for the apartment overall. The information will then be averaged and displayed on the second page so people can have more updated information to make inofrmed descisions as to where they should stay for a particular school semester.
+I am working on a Rate My Apartment website that will take user input 1  form a form and project graphs and other useful data. This latest update includes the backend developement for this project. I used sqlite and python for this.
 
-So far I have updated the front end side of things creating a form that can be filled out as well as a link to the information page. I still need to work on the back end and I would love to update the questions as I go to be more descriptive but still not so long people never answer the survey questions.
+I created a table called apartment. to focus the program and what it executes I created a cursor variable that is related to the sqlite file. As I went through the program I added, removed, changed things and then commited it (finalizing my changes) to the file. As I went I saved querys which produced a dataframe that was the df I updated as I went until in the end I took that datafram and made a graph with it using altair.
+
+This is all for a future apartment rating website.
+{Provide a link to your YouTube demonstration. It should be a 4-5 minute demo of the software running, a walkthrough of the code, and a view of how created the Relational Database.}
+
+[Software Demo Video]([http://youtube.link.goes.here](https://youtu.be/nXoaQNy3WMA))
+
+# Relational Database
 
 
-
-[Software Demo Video, (4 min 20 seconds)](https://youtu.be/KX9AQcZ37xw)
-
-# Web Pages
-
-The first page has a survey to be filled out. The second page is where I hope to project the averages of the data recieved.
+I created a database in an sql file it started out empty. So I created a table called apartment and filled it with varius row values. Then I created a graph to display the price for apartments over the years.
+This is an early developement project. I only have one table so far but plan to branch out to more the more information I get in the future. Right now I just created the data but I plan to link this to a form using CSS and Html. The one table has the following tables and their value types
+    prepapartment TEXT NOT NULL,
+    star TEXT,
+    apartment TEXT,
+    housing TEXT,
+    semester TEXT,
+    UpcomingSchoolYear INTEGER,
+    ThisSemesterCost INTEGER
 
 # Development Environment
-
 -Visual Studio Code 2023
--html
--css
+
+- sqlite3 (most recent)
+- python 3.11.5
+- numpy
+- altair
+- pandas
+  
+(previous work)
+- css
+- html
 
 # Useful Websites
 
 {Make a list of websites that you found helpful in this project}
-* [button as a link](https://stackoverflow.com/questions/40974745/how-do-i-make-submit-button-redirect-to-another-page)
+
+for the backend (most recent update)
+- [sqlite website](https://www.sqlitetutorial.net/sqlite-rename-column/)
+- [sql w3schools]([https://www.sqlitetutorial.net/sqlite-rename-column/](https://www.w3schools.com/sql/))
+- [sqlite w3schools]([http://url.link.goes.here](https://www.w3schools.blog/sqlite-tutorial))
+
+for the css and html front end
+[button as a link](https://stackoverflow.com/questions/40974745/how-do-i-make-submit-button-redirect-to-another-page)
 * [html accessing css](https://sebhastian.com/css-not-linking-html/)
 * [W3 Schools](https://www.w3schools.com/css/default.asp)
 
 * [html to csv file](https://stackoverflow.com/questions/22264375/how-to-export-html-form-to-csv-file)
 
-* [sqlite website](https://www.sqlitetutorial.net/sqlite-rename-column/)
-
 # Future Work
 
 {Make a list of things that you need to fix, improve, and add in the future.}
-* Item 1 I need to incorporate disabilitiy accomodation such as auditory reading for blind users
-* Item 2 I need to utilize the back end to record data
-* Item 3 I need to display the back end information onto page two and improve on what data is provided.
+
+- Item 1 get the back end to link with the form (front end)
+- Item 2 get the graph working better.
+- Item 3 unclutter code to be more readable and more convenient such as more automation.
+- Item 4 accessibility
