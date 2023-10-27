@@ -29,6 +29,8 @@ The first page has a survey to be filled out. The second page is where I hope to
 
 * [html to csv file](https://stackoverflow.com/questions/22264375/how-to-export-html-form-to-csv-file)
 
+* [sqlite website](https://www.sqlitetutorial.net/sqlite-rename-column/)
+
 # Future Work
 
 {Make a list of things that you need to fix, improve, and add in the future.}
