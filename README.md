@@ -8,7 +8,7 @@ I created a table called apartment. to focus the program and what it executes I 
 This is all for a future apartment rating website.
 {Provide a link to your YouTube demonstration. It should be a 4-5 minute demo of the software running, a walkthrough of the code, and a view of how created the Relational Database.}
 
-[Software Demo Video]([http://youtube.link.goes.here](https://youtu.be/nXoaQNy3WMA))
+[Software Demo Video](https://www.youtube.com/watch?v=nXoaQNy3WMA)
 
 # Relational Database
 
