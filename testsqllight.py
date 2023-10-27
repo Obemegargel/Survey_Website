@@ -81,11 +81,11 @@ INSERT INTO apartment (
     UpcomingSchoolYear,
     ThisSemesterCost
 )
-VALUES('Nauvoo House', 'threeval', 'Nauvoo House', 'Mens', 'Fall', 2024, 950)
+VALUES('Nauvoo House', 'threeval', 'Nauvoo House', 'Mens', 'Fall', 2024, 1500)
 """
 cursor.execute(insert_row)
 con.commit()
-#%%
+
 # %%
 df
 # %%
@@ -93,10 +93,54 @@ df = pd.read_sql_query("""
     SELECT *
     FROM apartment
 """, con)
+df
 
-#%%
-df#sometimes when I added it was to the wrong df while othertimes it was to dfafterinsert
-
+#%% insert another data point
+insert_row = """
+INSERT INTO apartment (
+    preapartment,
+    star,
+    apartment,
+    housing,
+    semester,
+    UpcomingSchoolYear,
+    ThisSemesterCost
+)
+VALUES('Nauvoo House', 'oneval', 'Somerset', 'Womens', 'Spring', 2023, 1080)
+"""
+cursor.execute(insert_row)
+con.commit()
+# %%
+df
+# %%
+df = pd.read_sql_query("""
+    SELECT *
+    FROM apartment
+""", con)
+df
+#%% insert another value
+insert_row = """
+INSERT INTO apartment (
+    preapartment,
+    star,
+    apartment,
+    housing,
+    semester,
+    UpcomingSchoolYear,
+    ThisSemesterCost
+)
+VALUES('Somerset', 'fourval', 'Bountiful Place', 'Mens', 'Fall', 2021, 1550)
+"""
+cursor.execute(insert_row)
+con.commit()
+# %%
+df
+# %%
+df = pd.read_sql_query("""
+    SELECT *
+    FROM apartment
+""", con)
+df
 
 
 
@@ -163,4 +207,19 @@ df
 
 #%%
 #use results for something.
+# %%
+df1 = df
+df1 = pd.read_sql_query("""
+    SELECT apartment, ThisSemesterCost, UpcomingSchoolYear 
+    FROM apartment AS a
+    WHERE apartment IN ("Nauvoo House", "The Cove", "Somerset")
+""", con)
+
+base = alt.Chart(df1).encode(
+        x = alt.X('UpcomingSchoolYear'),
+        y = 'ThisSemesterCost',
+        color=alt.Color('apartment:N')#chatgpt helped with the color line. It made the color different depending on the teamkey:n
+    ).mark_line()
+# %%
+base
 # %%
